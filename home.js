@@ -94,3 +94,47 @@ $('.planet-slider').slick({
 
     ]
 });
+
+$('.product-slider').slick({
+    dots: true,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    responsive: [
+        {
+            breakpoint: 1200,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+
+            }
+        },
+        {
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 500,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
+
+    ]
+});
+
+// JavaScript
+document.querySelectorAll('.size-option').forEach(function (sizeOption) {
+    sizeOption.addEventListener('click', function () {
+        const selectedSize = this.getAttribute('data-size');
+        document.querySelector('.selected-size').style.color = 'black';
+        document.querySelector('.size-title .selected-size').textContent = selectedSize.toUpperCase();
+    });
+});
+
+
